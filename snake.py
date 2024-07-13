@@ -49,3 +49,10 @@ class Snake:
 
     def extend(self):
         self.add_square(self.squares[-1].position())
+    
+    def reset(self):
+        for square in self.squares:
+            square.goto(1000, 1000)
+        self.squares.clear()
+        self.create_snake()
+        self.head = self.squares[0]
