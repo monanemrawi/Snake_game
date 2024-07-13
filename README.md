@@ -20,6 +20,8 @@ This is a simple Snake game implemented in Python using the Turtle module. The g
 - Add sound effects for actions such as eating food and game over.
 - Implement levels with increasing difficulty.
 - Allow customization of snake colors and game settings.
+- Show menu for movement guidance
+- show mode prompt as buttons instead of input
 
 ## Acknowledgments
 - This project was inspired by classic Snake games and uses Turtle graphics for Python.
