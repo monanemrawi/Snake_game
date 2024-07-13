@@ -19,7 +19,12 @@ def game_loop():
     game_is_on = True
     while game_is_on:
         screen.update()
-        time.sleep(0.1)
+        if mode == 'easy':
+            time.sleep(0.2)
+        elif mode == "hard":
+            time.sleep(0.05)
+        else:
+            time.sleep(0.1)
         snake.move()
 
         # Collision with food 
@@ -44,6 +49,7 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game")
 screen.tracer(0) 
+mode = screen.textinput("CHOOSE MODE", "Type 'easy', 'medium', or 'hard':").lower()
 
 snake = Snake()
 food = Food()

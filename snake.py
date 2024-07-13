@@ -1,9 +1,12 @@
-from turtle import Turtle
+import turtle
+from random import randint, choice
 
 UP = 90 
 DOWN = 270 
 LEFT = 180
 RIGHT = 0
+
+turtle.colormode(255)
 
 class Snake:
     def __init__(self):
@@ -41,14 +44,21 @@ class Snake:
             self.head.setheading(RIGHT)
 
     def add_square(self, position):
-        new_square = Turtle(shape="square")
-        new_square.color("white")
+        new_square = turtle.Turtle(shape="square")
+        new_square.color(self.random_pastel_color())
         new_square.penup()
         new_square.goto(position)
         self.squares.append(new_square)
 
     def extend(self):
         self.add_square(self.squares[-1].position())
+
+    def random_pastel_color(self):
+        r = randint(150, 255)
+        g = randint(150, 255)
+        b = randint(150, 255)
+        color = (r, g, b)
+        return color
     
     def reset(self):
         for square in self.squares:
@@ -56,3 +66,4 @@ class Snake:
         self.squares.clear()
         self.create_snake()
         self.head = self.squares[0]
+
